@@ -1,4 +1,4 @@
-package deck
+package chapter2
 
 import testutilities.UnitSpec
 
