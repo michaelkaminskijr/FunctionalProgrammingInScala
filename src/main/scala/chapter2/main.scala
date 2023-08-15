@@ -25,3 +25,10 @@ val result1 = isSorted(Array(1, 2, 3), _ > _)
 val result2 = isSorted(Array(1, 2, 1), _ > _)
 val result3 = isSorted(Array(3, 2, 1), _ < _)
 val result4 = isSorted(Array(1, 2, 3), _ < _)
+
+// Exercise 2.3
+def curry[A, B, C](f: (A, B) => C): A => (B => C) =
+  (a: A) => ((b: B) => f(a, b))
+
+def doubler(n: Int): Int =
+  curry((x: Int, y: Int) => x*y)(2)(n)
