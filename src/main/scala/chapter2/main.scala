@@ -32,3 +32,8 @@ def curry[A, B, C](f: (A, B) => C): A => (B => C) =
 
 def doubler(n: Int): Int =
   curry((x: Int, y: Int) => x*y)(2)(n)
+
+// Exercise 2.4
+def uncurry[A, B, C](f: A => B => C): (A, B) => C =
+  (a: A, b: B) => f(a)(b)
+
